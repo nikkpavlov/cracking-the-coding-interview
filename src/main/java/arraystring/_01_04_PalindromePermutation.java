@@ -12,6 +12,19 @@ package arraystring;
  */
 class _01_04_PalindromePermutation {
     boolean check(String s) {
-        throw new UnsupportedOperationException();
+    	s.toLowerCase();
+    	int[]  arr =new int[256];
+    	for (int i = 0; i<s.length(); i++) {
+    		if ((int) 'a' <= s.charAt(i) && s.charAt(i) <= (int) 'z') arr[(int) s.charAt(i)]++;
+    	}
+    	boolean undivisibleByTwo = false;
+    	for (int val : arr) {
+    		if (val%2 == 0) continue;
+    		else {
+    			if (!undivisibleByTwo) undivisibleByTwo = true;
+    			else return false;
+    		}
+    	}
+        return true;
     }
 }

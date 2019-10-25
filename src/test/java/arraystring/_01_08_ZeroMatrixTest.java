@@ -10,7 +10,8 @@ public class _01_08_ZeroMatrixTest {
 
     @Test
     public void withEmpty() {
-        assertTrue(Arrays.deepEquals(new int[][]{{}}, new _01_08_ZeroMatrix().zero(new int[][]{{}})));
+    	int[][] arr = new int[][] {{}};
+        assertTrue("meow", Arrays.deepEquals(arr, new _01_08_ZeroMatrix().zero(arr)));
     }
 
 

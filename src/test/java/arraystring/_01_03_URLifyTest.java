@@ -27,4 +27,11 @@ public class _01_03_URLifyTest {
     public void withTwoSpaces() {
         assertArrayEquals("hello%20world%20bob".toCharArray(), s.urlify("hello world bob    ".toCharArray(), 15));
     }
+    
+    @Test
+    public void twoSpaceNextToEachOther() {
+    	String answer = "hello%20%20world";
+    	String input = "hello  world    ";
+    	assertArrayEquals(answer.toCharArray(), s.urlify(input.toCharArray(), input.length()));
+    }
 }
